@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --occupied-color: #4ec9c9;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #082036;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.movie-container {
+  padding: 10px 10px;
+}
+
+.movie-container select {
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.seat-status {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.seat-status li {
+  display: flex;
+  align-items: center;
+}
+
+.seat-status li small {
+  margin-left: 2px;
+}
+
+.screen-seats {
+  perspective: 500px;
+  margin-bottom: 30px;
+}
+
+.screen {
+  background-color: #fff;
+  height: 100px;
+  margin-bottom: 30px;
+  box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.7);
+  transform: rotateX(-45deg);
+}
+
+.seat {
+  height: 20px;
+  width: 20px;
+  background-color: #0d2c49;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.occupied {
+  background-color: #fff;
+}
+
+.seat.selected {
+  background-color: var(--occupied-color);
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 22px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 22px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.seat-status .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.rows {
+  display: flex;
+}
+
+.count {
+  color: var(--occupied-color);
+}
+.total {
+  color: var(--occupied-color);
+}
